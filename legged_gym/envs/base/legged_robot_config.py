@@ -43,9 +43,12 @@ class LeggedRobotCfg(BaseConfig):
         resampling_time = 10. # time before command are changed[s]
         heading_command = True # if true: compute ang vel command from heading error
         class ranges:
-            lin_vel_x = [-1.0, 1.0] # min max [m/s]
-            lin_vel_y = [-1.0, 1.0]   # min max [m/s]
-            ang_vel_yaw = [-1, 1]    # min max [rad/s]
+            # lin_vel_x = [-1.0, 1.0] # min max [m/s]
+            # lin_vel_y = [-1.0, 1.0]   # min max [m/s]
+            # ang_vel_yaw = [-1, 1]    # min max [rad/s]
+            lin_vel_x = [-0.3, 0.3] # min max [m/s]
+            lin_vel_y = [-0.3, 0.3]   # min max [m/s]
+            ang_vel_yaw = [-0.5, 0.5]    # min max [rad/s]
             heading = [-3.14, 3.14]
 
     class init_state:
@@ -122,7 +125,7 @@ class LeggedRobotCfg(BaseConfig):
         soft_dof_vel_limit = 1.
         soft_torque_limit = 1.
         base_height_target = 1.
-        max_contact_force = 100. # forces above this value are penalized
+        max_contact_force = 400. # forces above this value are penalized
 
     class normalization:
         class obs_scales:

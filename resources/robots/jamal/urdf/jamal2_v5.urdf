@@ -211,7 +211,7 @@
     </collision>
   </link>
   <joint name="FL_foot_joint" type="fixed">
-    <origin xyz="-0.00157691666386468 5.00000000003276E-05 -0.24800624908566" rpy="0 0 0"/>
+    <origin xyz="-0.00157691666386468 5.00000000003276E-05 -0.23" rpy="0 0 0"/>
     <parent link="FL_calf"/>
     <child link="FL_foot"/>
     <axis xyz="0 0 0"/>
@@ -373,7 +373,7 @@
     </collision>
   </link>
   <joint name="RL_foot_joint" type="fixed">
-    <origin xyz="0.000550115239932258 5.00000000001888E-05 -0.248000939223794" rpy="0 0 0"/>
+    <origin xyz="0.000550115239932258 5.00000000001888E-05 -0.23" rpy="0 0 0"/>
     <parent link="RL_calf"/>
     <child link="RL_foot"/>
     <axis xyz="0 0 0"/>
@@ -535,7 +535,7 @@
     </collision>
   </link>
   <joint name="FR_foot_joint" type="fixed">
-    <origin xyz="-0.0016311444601869 -5.00000000001333E-05 -0.248006659789989" rpy="0 0 0"/>
+    <origin xyz="-0.0016311444601869 -5.00000000001333E-05 -0.23" rpy="0 0 0"/>
     <parent link="FR_calf"/>
     <child link="FR_foot"/>
     <axis xyz="0 0 0"/>
@@ -697,7 +697,7 @@
     </collision>
   </link>
   <joint name="RR_foot_joint" type="fixed">
-    <origin xyz="0.00181474156111877 -5.000000000005E-05 -0.248008147336944" rpy="0 0 0"/>
+    <origin xyz="0.00181474156111877 -5.000000000005E-05 -0.23" rpy="0 0 0"/>
     <parent link="RR_calf"/>
     <child link="RR_foot"/>
     <axis xyz="0 0 0"/>
