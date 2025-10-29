@@ -28,13 +28,13 @@ class JAMALRoughCfg(LeggedRobotCfg):
         self_collisions = 1
 
     # Freeze commands to zero so the task is "do not move"
-    class commands(LeggedRobotCfg.commands):
-        # Set all command ranges to zero
-        lin_vel_x = [0.0, 0.0]
-        lin_vel_y = [0.0, 0.0]
-        ang_vel_yaw = [0.0, 0.0]
-        heading_command = False
-        resampling_time = 1000.0  # very infrequent resampling (effectively constant)
+    # class commands(LeggedRobotCfg.commands):
+    #     # Set all command ranges to zero
+    #     lin_vel_x = [0.0, 0.0]
+    #     lin_vel_y = [0.0, 0.0]
+    #     ang_vel_yaw = [0.0, 0.0]
+    #     heading_command = False
+    #     resampling_time = 1000.0  # very infrequent resampling (effectively constant)
 
     class rewards(LeggedRobotCfg.rewards):
         base_height_target = 0.33

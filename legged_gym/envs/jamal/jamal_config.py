@@ -4,61 +4,54 @@ class JAMALRoughCfg(LeggedRobotCfg):
     class init_state(LeggedRobotCfg.init_state):
         pos = [0.0, 0.0, 0.35]
         default_joint_angles = {
-            'FL_hip_joint':   0.10,  'FR_hip_joint': -0.10,
-            'RL_hip_joint':   0.10,  'RR_hip_joint': -0.10,
-            'FL_thigh_joint': 0.87,  'FR_thigh_joint': 0.87,
-            'RL_thigh_joint': -0.87, 'RR_thigh_joint': -0.87,
-            'FL_calf_joint':  -1.57, 'FR_calf_joint': -1.57,
-            'RL_calf_joint':   1.57, 'RR_calf_joint': 1.57,
+            'FL_hip_joint':   0.10,
+            'RL_hip_joint':   0.10,
+            'FR_hip_joint': -0.10,
+            'RR_hip_joint': -0.10,
+            
+            'FL_thigh_joint': 0.87,  
+            'RL_thigh_joint': -0.87,
+            'FR_thigh_joint': 0.87,  
+            'RR_thigh_joint': -0.87,
+            
+            'FL_calf_joint':  -1.57, 
+            'RL_calf_joint':   1.57,
+            'FR_calf_joint': -1.57,  
+            'RR_calf_joint': 1.57,
         }
 
     class control(LeggedRobotCfg.control):
         control_type = 'P'
-        stiffness = {'joint': 60.0}
+        stiffness = {'joint': 80.0}
         damping   = {'joint': 2.0}     # ↑ damping to kill oscillations
-        action_scale = 0.4            # gentler actions for quiet stance
+        action_scale = 0.25            # gentler actions for quiet stance
         decimation = 4
 
     class asset(LeggedRobotCfg.asset):
         file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/jamal/urdf/jamal_inverted.urdf'
         name = "jamal"
-        foot_name = "FOOT"
+        foot_name = "foot"
         penalize_contacts_on = ["thigh","calf"]
         terminate_after_contacts_on = ["base"]
         self_collisions = 1
-
+        # default_dof_drive_mode = 0 # see GymDofDriveModeFlags (0 is none, 1 is pos tgt, 2 is vel tgt, 3 effort)
+        
     # Freeze commands to zero so the task is "do not move"
     # class commands(LeggedRobotCfg.commands):
-    #     # Set all command ranges to zero
-    #     lin_vel_x = [0.0, 0.0]
-    #     lin_vel_y = [0.0, 0.0]
-    #     ang_vel_yaw = [0.0, 0.0]
-    #     heading_command = False
-    #     resampling_time = 1000.0  # very infrequent resampling (effectively constant)
+        # Set all command ranges to zero
+        # lin_vel_x = [0.0, 0.0]
+        # lin_vel_y = [0.0, 0.0]
+        # ang_vel_yaw = [0.0, 0.0]
+        # heading_command = False
+        # resampling_time = 1000.0  # very infrequent resampling (effectively constant)
 
     class rewards(LeggedRobotCfg.rewards):
-        base_height_target = 0.33
         soft_dof_pos_limit = 0.9
+        base_height_target = 0.3
 
         class scales(LeggedRobotCfg.rewards.scales):
-            # Posture & stability
-            # tracking_lin_vel = 1.0
-            # tracking_ang_vel = 0.5
-            # base_height      = 0.2
-            # # contact          = 0.1       # reward proper foot contacts (if available)
-            # feet_air_time    = 0.5       # encourages flight time in trot (if available)
-
-            # # Stabilizers / penalties
-            # orientation      = -1.0
-            # ang_vel_xy       = -0.2
-            # lin_vel_z        = -0.02
-            # torques          = -0.0002
-            # action_rate      = -0.01
-            # dof_vel          = -0.002
-            # dof_pos_limits   = -0.2
-
             torques = -0.0002
-            dof_pos_limits = -0.2
+            dof_pos_limits = -15.0
 
 
 class JAMALRoughCfgPPO(LeggedRobotCfgPPO):
