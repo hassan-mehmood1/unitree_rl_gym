@@ -32,6 +32,7 @@ class GO2RoughCfg( LeggedRobotCfg ):
 
     class asset( LeggedRobotCfg.asset ):
         file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/go2/urdf/go2.urdf'
+        # file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/jamal/urdf/jamal2_v5.urdf'
         name = "go2"
         foot_name = "foot"
         penalize_contacts_on = ["thigh", "calf"]

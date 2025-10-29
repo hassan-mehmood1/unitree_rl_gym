@@ -349,7 +349,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/foot.dae" />
+          filename="../dae/foot.dae" />go2
       </geometry>
       <material
         name="">
