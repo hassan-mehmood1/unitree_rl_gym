@@ -23,15 +23,17 @@ class GO2RoughCfg( LeggedRobotCfg ):
     class control( LeggedRobotCfg.control ):
         # PD Drive parameters:
         control_type = 'P'
-        stiffness = {'joint': 20.}  # [N*m/rad]
-        damping = {'joint': 0.5}     # [N*m*s/rad]
+        # stiffness = {'joint': 20.}  # [N*m/rad]
+        # damping = {'joint': 0.5}     # [N*m*s/rad]
+        stiffness = {'joint': 50.}  # [N*m/rad]
+        damping = {'joint': 1.5}     # [N*m*s/rad]
         # action scale: target angle = actionScale * action + defaultAngle
         action_scale = 0.25
         # decimation: Number of control action updates @ sim DT per policy DT
         decimation = 4
 
     class asset( LeggedRobotCfg.asset ):
-        file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/go2/urdf/go2.urdf'
+        file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/go2/urdf/go2_tested.urdf'
         # file = '{LEGGED_GYM_ROOT_DIR}/resources/robots/jamal/urdf/jamal2_v5.urdf'
         name = "go2"
         foot_name = "foot"

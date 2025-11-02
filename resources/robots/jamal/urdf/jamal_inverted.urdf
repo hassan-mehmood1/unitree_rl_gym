@@ -57,8 +57,8 @@
     <parent link="base"/>
     <child link="LF_hip"/>
     <axis xyz="1 0 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-0.863" upper="0.863" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-0.863" upper="0.863" velocity="8"/>
   </joint>
   <link name="LF_hip">
     <visual>
@@ -85,8 +85,8 @@
     <parent link="LF_hip"/>
     <child link="LF_thigh"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="0.0" upper="1.57" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="0.0" upper="1.57" velocity="8"/>
   </joint>
   <link name="LF_thigh">
     <visual>
@@ -120,8 +120,8 @@
     <parent link="LF_thigh"/>
     <child link="LF_calf"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-2.62" upper="-0.78" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-2.62" upper="-0.78" velocity="8"/>
   </joint>
   <link name="LF_calf">
     <visual>
@@ -173,8 +173,8 @@
     <parent link="base"/>
     <child link="LH_hip"/>
     <axis xyz="1 0 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-0.863" upper="0.863" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-0.863" upper="0.863" velocity="8"/>
   </joint>
   <link name="LH_hip">
     <visual>
@@ -201,8 +201,8 @@
     <parent link="LH_hip"/>
     <child link="LH_thigh"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-1.57" upper="0.0" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-1.57" upper="0.0" velocity="8"/>
   </joint>
   <link name="LH_thigh">
     <visual>
@@ -236,8 +236,8 @@
     <parent link="LH_thigh"/>
     <child link="LH_calf"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="0.78" upper="2.62" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="0.78" upper="2.62" velocity="8"/>
   </joint>
   <link name="LH_calf">
     <visual>
@@ -289,8 +289,8 @@
     <parent link="base"/>
     <child link="RF_hip"/>
     <axis xyz="1 0 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-0.863" upper="0.863" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-0.863" upper="0.863" velocity="8"/>
   </joint>
   <link name="RF_hip">
     <visual>
@@ -317,8 +317,8 @@
     <parent link="RF_hip"/>
     <child link="RF_thigh"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="0.0" upper="1.57" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="0.0" upper="1.57" velocity="8"/>
   </joint>
   <link name="RF_thigh">
     <visual>
@@ -352,8 +352,8 @@
     <parent link="RF_thigh"/>
     <child link="RF_calf"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-2.62" upper="-0.78" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-2.62" upper="-0.78" velocity="8"/>
   </joint>
   <link name="RF_calf">
     <visual>
@@ -405,8 +405,8 @@
     <parent link="base"/>
     <child link="RH_hip"/>
     <axis xyz="1 0 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-0.863" upper="0.863" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-0.863" upper="0.863" velocity="8"/>
   </joint>
   <link name="RH_hip">
     <visual>
@@ -433,8 +433,8 @@
     <parent link="RH_hip"/>
     <child link="RH_thigh"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="-1.57" upper="0.0" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="-1.57" upper="0.0" velocity="8"/>
   </joint>
   <link name="RH_thigh">
     <visual>
@@ -468,8 +468,8 @@
     <parent link="RH_thigh"/>
     <child link="RH_calf"/>
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.01" friction="0.2"/>
-    <limit effort="100" lower="0.78" upper="2.62" velocity="30"/>
+    <!-- <dynamics damping="0.01" friction="0.2"/> -->
+    <limit effort="100" lower="0.78" upper="2.62" velocity="8"/>
   </joint>
   <link name="RH_calf">
     <visual>

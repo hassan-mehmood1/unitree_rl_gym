@@ -4,7 +4,7 @@ Stephen Brawner (brawner@gmail.com)
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="go2_description">
+  name="jamal_description">
   <link
     name="base">
     <inertial>
@@ -73,10 +73,10 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-1.0472"
-      upper="1.0472"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="FL_thigh">
@@ -129,7 +129,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-1.5708"
       upper="3.4907"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="FL_calf">
@@ -177,50 +177,6 @@ Stephen Brawner (brawner@gmail.com)
       effort="100"
       velocity="20.07" />
   </joint>
-  <!-- <link
-    name="FL_calflower">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FL_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="FL_calf" />
-    <child
-      link="FL_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="FL_calflower1">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FL_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="FL_calflower" />
-    <child
-      link="FL_calflower1" />
-    <axis
-      xyz="0 0 0" />
-  </joint> -->
   <link
     name="FL_foot">
     <inertial>
@@ -300,10 +256,10 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-1.0472"
-      upper="1.0472"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="FR_thigh">
@@ -354,7 +310,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-1.5708"
       upper="3.4907"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="FR_calf">
@@ -369,7 +325,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/calf_mirror.dae" />
+          filename="../dae/calf.dae" />
       </geometry>
       <material
         name="">
@@ -400,50 +356,6 @@ Stephen Brawner (brawner@gmail.com)
       effort="100"
       velocity="20.07" />
   </joint>
-  <!-- <link
-    name="FR_calflower">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FR_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="FR_calf" />
-    <child
-      link="FR_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="FR_calflower1">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FR_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="FR_calflower" />
-    <child
-      link="FR_calflower1" />
-    <axis
-      xyz="0 0 0" />
-  </joint> -->
   <link
     name="FR_foot">
     <inertial>
@@ -521,10 +433,10 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-1.0472"
-      upper="1.0472"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="RL_thigh">
@@ -575,7 +487,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-0.5236"
       upper="4.5379"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="RL_calf">
@@ -621,50 +533,6 @@ Stephen Brawner (brawner@gmail.com)
       effort="100"
       velocity="20.07" />
   </joint>
-  <!-- <link
-    name="RL_calflower">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RL_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="RL_calf" />
-    <child
-      link="RL_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="RL_calflower1">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RL_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="RL_calflower" />
-    <child
-      link="RL_calflower1" />
-    <axis
-      xyz="0 0 0" />
-  </joint> -->
   <link
     name="RL_foot">
     <inertial>
@@ -742,10 +610,10 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-1.0472"
-      upper="1.0472"
+      lower="-0.53"
+      upper="0.53"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="RR_thigh">
@@ -796,7 +664,7 @@ Stephen Brawner (brawner@gmail.com)
       lower="-0.5236"
       upper="4.5379"
       effort="100"
-      velocity="30.1" />
+      velocity="8" />
   </joint>
   <link
     name="RR_calf">
@@ -811,7 +679,7 @@ Stephen Brawner (brawner@gmail.com)
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="../dae/calf_mirror.dae" />
+          filename="../dae/calf.dae" />
       </geometry>
       <material
         name="">
@@ -842,50 +710,6 @@ Stephen Brawner (brawner@gmail.com)
       effort="100"
       velocity="20.07" />
   </joint>
-  <!-- <link
-    name="RR_calflower">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RR_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="RR_calf" />
-    <child
-      link="RR_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="RR_calflower1">
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RR_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="RR_calflower" />
-    <child
-      link="RR_calflower1" />
-    <axis
-      xyz="0 0 0" />
-  </joint> -->
   <link
     name="RR_foot">
     <inertial>
@@ -954,34 +778,4 @@ Stephen Brawner (brawner@gmail.com)
     <axis
       xyz="0 0 0" />
   </joint>
-  <!-- <link
-    name="radar">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
-  </link>
-  <joint
-    name="radar_joint"
-    type="fixed">
-    <origin
-      xyz="0.28945 0 -0.046825"
-      rpy="0 2.8782 0" />
-    <parent
-      link="base" />
-    <child
-      link="radar" />
-    <axis
-      xyz="0 0 0" />
-  </joint> -->
 </robot>

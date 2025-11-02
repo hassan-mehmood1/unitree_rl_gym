@@ -2,7 +2,7 @@ from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg, LeggedRobot
 
 class JAMALRoughCfg(LeggedRobotCfg):
     class init_state(LeggedRobotCfg.init_state):
-        pos = [0.0, 0.0, 0.45]
+        pos = [0.0, 0.0, 0.35]
         default_joint_angles = {
             'FL_hip_joint':   0.10,
             'RL_hip_joint':   0.10,
@@ -22,9 +22,9 @@ class JAMALRoughCfg(LeggedRobotCfg):
 
     class control(LeggedRobotCfg.control):
         control_type = 'P'
-        stiffness = {'joint': 60.0}
-        damping   = {'joint': 1.0}     # ↑ damping to kill oscillations
-        action_scale = 0.15            # gentler actions for quiet stance
+        stiffness = {'joint': 80.0}
+        damping   = {'joint': 2.0}     # ↑ damping to kill oscillations
+        action_scale = 0.25            # gentler actions for quiet stance
         decimation = 4
 
     class asset(LeggedRobotCfg.asset):
@@ -47,21 +47,11 @@ class JAMALRoughCfg(LeggedRobotCfg):
 
     class rewards(LeggedRobotCfg.rewards):
         soft_dof_pos_limit = 0.9
-        base_height_target = 0.4
+        base_height_target = 0.3
 
         class scales(LeggedRobotCfg.rewards.scales):
             torques = -0.0002
-            dof_pos_limits = -10.0
-
-            # //////////////////new rewards////////////////
-            # Height / posture stabilizers
-            base_height = -0.2         # was -0.; enable it
-            orientation = -0.5         # was -0.; penalize bad orientation (pitch/roll/yaw err)
-            action_rate = -0.02        # was -0.01; slow action changes
-            termination = -0.05         # was -0.0; make falling clearly bad
-            # Gait shaping
-            feet_air_time = 0.8      # was +1.0; reduce a lot to avoid pogo
-
+            dof_pos_limits = -15.0
 
 
 class JAMALRoughCfgPPO(LeggedRobotCfgPPO):
@@ -70,7 +60,7 @@ class JAMALRoughCfgPPO(LeggedRobotCfgPPO):
 
     class runner(LeggedRobotCfgPPO.runner):
         run_name = ''
-        experiment_name = 'jamal_inverted'
+        experiment_name = 'rough_jamal'
     # class policy:
     #     actor_hidden_dims = [128, 64, 32]
     #     critic_hidden_dims = [128, 64, 32]
