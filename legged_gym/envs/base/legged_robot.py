@@ -87,6 +87,10 @@ class LeggedRobot(BaseTask):
         self.gym.refresh_actor_root_state_tensor(self.sim)
         self.gym.refresh_net_contact_force_tensor(self.sim)
 
+        #   //////////////////////Added for foot height clearence////////////////////////////////////////
+        # self.gym.refresh_rigid_body_state_tensor(self.sim)
+        #  /////////////////////////////////////////////////////////////////////////////
+
         self.episode_length_buf += 1
         self.common_step_counter += 1
 
@@ -462,6 +466,11 @@ class LeggedRobot(BaseTask):
         self.base_ang_vel = quat_rotate_inverse(self.base_quat, self.root_states[:, 10:13])
         self.projected_gravity = quat_rotate_inverse(self.base_quat, self.gravity_vec)
       
+    #   //////////////////////Added for foot height clearence////////////////////////////////////////
+        # rigid_body_state_tensor = self.gym.acquire_rigid_body_state_tensor(self.sim)
+        # self.gym.refresh_rigid_body_state_tensor(self.sim)
+        # self.rigid_body_states = gymtorch.wrap_tensor(rigid_body_state_tensor).view(self.num_envs, self.num_bodies, 13)
+    # ///////////////////////////////////////////////////////////////////////////////////////////////
 
         # joint positions offsets and PD gains
         self.default_dof_pos = torch.zeros(self.num_dof, dtype=torch.float, device=self.device, requires_grad=False)
@@ -725,3 +734,33 @@ class LeggedRobot(BaseTask):
     def _reward_feet_contact_forces(self):
         # penalize high contact forces
         return torch.sum((torch.norm(self.contact_forces[:, self.feet_indices, :], dim=-1) -  self.cfg.rewards.max_contact_force).clip(min=0.), dim=1)
+    # def _reward_stumble(self):
+    #     # Penalize feet hitting vertical surfaces
+    #     hit = torch.any(
+    #         torch.norm(self.contact_forces[:, self.feet_indices, :2], dim=2) >
+    #         5.0 * torch.abs(self.contact_forces[:, self.feet_indices, 2]),
+    #         dim=1
+    #     )
+    #     return hit.float()
+
+    # def _reward_swing_clearance(self):
+    #     """
+    #     Encourage each swing foot to clear a target height, and lightly
+    #     penalize over-lift. Uses world Z (flat ground).
+    #     """
+    #     # swing detection: no positive normal (z) contact force
+    #     contact = self.contact_forces[:, self.feet_indices, 2] > 1.0   # [env, feet]
+    #     swing = ~contact                                               # bool mask
+
+    #     # foot world-Z from rigid body states (x,y,z,... -> z is index 2)
+    #     foot_z = self.rigid_body_states[:, self.feet_indices, 2]       # [env, feet]
+
+    #     tgt    = self.cfg.rewards.swing_clearance_target               # e.g., 0.06
+    #     max_ok = self.cfg.rewards.swing_clearance_max                  # e.g., 0.10
+
+    #     # reward above target, penalty above max_ok (twice as strong)
+    #     bonus = torch.clamp(foot_z - tgt,    min=0.0)
+    #     over  = torch.clamp(foot_z - max_ok, min=0.0)
+
+    #     per_foot = (bonus - 2.0 * over) * swing.float()
+    #     return torch.sum(per_foot, dim=1)                              # [env]

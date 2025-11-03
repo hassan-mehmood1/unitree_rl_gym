@@ -46,7 +46,7 @@ class LeggedRobotCfg(BaseConfig):
             # lin_vel_x = [-1.0, 1.0] # min max [m/s]
             # lin_vel_y = [-1.0, 1.0]   # min max [m/s]
             # ang_vel_yaw = [-1, 1]    # min max [rad/s]
-            lin_vel_x = [-0.5, 0.5] # min max [m/s]
+            lin_vel_x = [-1.0, 1.0] # min max [m/s]
             lin_vel_y = [-0.5, 0.5]   # min max [m/s]
             ang_vel_yaw = [-0.5, 0.5]    # min max [rad/s]
             heading = [-3.14, 3.14]
@@ -115,9 +115,9 @@ class LeggedRobotCfg(BaseConfig):
             base_height = -0. 
             feet_air_time =  1.0
             collision = -1.
-            feet_stumble = -0.0 
+            stumble = -1.0 ## was 0
             action_rate = -0.01
-            stand_still = -0.
+            stand_still = -0.0
 
         only_positive_rewards = True # if true negative total rewards are clipped at zero (avoids early termination problems)
         tracking_sigma = 0.25 # tracking reward = exp(-error^2/sigma)
